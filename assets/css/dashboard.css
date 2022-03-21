@@ -1,0 +1,11 @@
+.nav-right-top > .row > .col-md-4 {
+  flex: 0 0 auto !important;
+  width: 30.333333% !important;
+}
+
+.body-left-part {
+  height: 300px;
+  background: rgb(182, 173, 173);
+}
+.body-right-part {
+}
