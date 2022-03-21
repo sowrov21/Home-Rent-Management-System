@@ -17,7 +17,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #04AA6D;
+  background-color: #97b1a7;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -78,7 +78,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 40%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -114,7 +114,7 @@ span.psw {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 100px) {
   span.psw {
      display: block;
      float: none;
@@ -127,8 +127,6 @@ span.psw {
 </head>
 <body>
 
-<h2>Modal Login Form</h2>
-
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
@@ -136,7 +134,7 @@ span.psw {
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      <img src="./login picture/login-background.png" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -150,11 +148,9 @@ span.psw {
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
     </div>
   </form>
 </div>
