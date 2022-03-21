@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Rent Management System</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <style>
+       
+        /* Style inputs */
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          margin-top: 6px;
+          margin-bottom: 16px;
+          resize: vertical;
+        }
+        
+        input[type=submit] {
+          background-color: #04AA6D;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+        /* Style the container/contact section */
+        
+        
+        /* Create two columns that float next to eachother */
+        .column {
+          float: left;
+          width: 50%;
+          margin-top: 6px;
+          padding: 20px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .column, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+        </style>
+
+</head>
+
+<body>
+    <!-- header menu starts -->
+    <div class="container-fluid m-0 p-0 sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="./assets/img/logo.jpg" alt=""></a>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" aria-current="page" href="index.html">HOME</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">FOR RENT</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                SERVICES
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item text-dark" href="#">STUDENT ROOMS</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">FLAT TO-LET</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">HOTEL ROOMS</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">BLOG</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="dashboard.html">DASHBOARD</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">GUIDELINES</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                LOGIN
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item text-dark" href="#">ADMIN</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">HOME OWNER</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">CLIENT</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- header menu ends -->
+
+
+    <!-- contact area start  -->
+    <div class="container py-5 my-5">
+        <div style="text-align:center">
+          <h2>Contact Us</h2>
+          <p>Swing by for a cup of coffee, or leave us a message:</p>
+        </div>
+        <div class="row">
+          <div class="col-md-8 offset-md-3 column">
+            <form action="/action_page.php">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+    <!-- contact area end -->
+
+    <!-- footer area start -->
+
+    <div class="container-fluid bg-dark py-5 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="./assets/img/logo.JPG" alt="">
+                    <p class="pt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Autem delectus nostrum aut dolor eaque ipsum voluptatum
+                        reprehenderit, animi atque eos!</p>
+                </div>
+                <div class="col-md-3">
+                    <p>CONTACT</p> <br>
+                    <p>info@hrms.com</p>
+                    <p>+8801794556952</p>
+                    <p>Uttara Sector-4</p>
+                </div>
+                <div class="col-md-3">
+                    <p>Social Media</p> <br>
+                    <p style="float:left; font-size:2.5rem; margin-right: 30px; margin-bottom: 50px;"><a href=""><i
+                                class="bi bi-facebook"></i></a></p>
+                    <p style="float:left; font-size:2.5rem; margin-right: 30px; margin-bottom: 50px;"><a href=""><i
+                                class="bi bi-instagram"></i></a></p>
+                </div>
+                <div class="col-md-3">
+                    <p>NEWSLETTER</p> <br>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet sit reprehenderit, deleniti
+                        exercitationem provident eos?</p>
+                    <p>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    </p>
+                    <p>You can visit our terms and condition here.</p>
+                </div>
+                <div class="col-md-12">
+                    <p>All right researved @ HRMS, 2022</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer area end -->
+
+    <!-- scroll top  -->
+
+    <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out"
+        data-abc="true"></a>
+
+    <!-- scroll top  -->
+
+
+    <script src="./assets/js/bootstrap.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/js/custom.js"></script>
+</body>
+
+</html>
