@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Rent Management System</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+</head>
+
+<body>
+    <!-- header menu starts -->
+    <div class="container-fluid m-0 p-0 sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="./assets/img/logo.jpg" alt=""></a>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white active" aria-current="page" href="#">HOME</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">FOR RENT</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                SERVICES
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item text-dark" href="#">STUDENT ROOMS</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">FLAT TO-LET</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">HOTEL ROOMS</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">BLOG</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">GUIDELINES</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                LOGIN
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item text-dark" href="#">ADMIN</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">HOME OWNER</a></li>
+                                <li><a class="dropdown-item text-dark" href="#">CLIENT</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- header menu ends -->
+
+    <!-- slider area starts -->
+    <div class="container-fluid p-0">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./assets/img/b1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/b2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./assets/img/b4.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- slider area ends -->
+
+    <!-- search area starts -->
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-8 text-center offset-md-2">
+                <h2 class="py-5">Search properties for rent in Bangladesh</h2>
+                <div class="btn-group pb-5" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck1">For Sale</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck3">For Rent</label>
+                </div>
+
+                <div class="form-input">
+                    <form action="" class="d-flex">
+                        <div class="row">
+                            <div class="col-md-10 pb-3">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                
+                            </div>
+                            <div class="col-md-2 pb-3">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+
+                            </div>
+                            <div class="col-md-12">
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Dropdown
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Dropdown
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Dropdown
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                        <li><a class="dropdown-item" href="#">Menu item</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- search area ends -->
+
+    <!-- service area start -->
+    <div class="container">
+        <div class="row text-center pb-5">
+            <h2 class="py-5 text-uppercase">What we do for you?</h2>
+            <div class="col-md-3 py-3">
+                <div class="card">
+                    <img src="./assets/img/icon_home.png" class="py-3 card-img-top service-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Do you want to sell your property?</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur.</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 py-3">
+                <div class="card">
+                    <img src="./assets/img/icon_key.png" class="py-3 card-img-top service-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Do you want to rent out your property?</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur..</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 py-3">
+                <div class="card">
+                    <img src="./assets/img/icon_money.png" class="py-3 card-img-top service-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Stewardship</h5> <br>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur..</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 py-3">
+                <div class="card">
+                    <img src="./assets/img/icon_news.png" class="py-3 card-img-top service-img" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Free valuation</h5> <br>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service area end -->
+
+    <!-- latest news start -->
+    <div class="container pb-5">
+        <div class="row">
+            <h2 class="py-5 text-center">LATEST NEWS</h2>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./assets/img/website_covid19.jpg" class="py-3 card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Do you want to sell your property?</h5>
+                        <p class="card-text justify-content-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Harum delectus eius velit illo eligendi, ipsum neque necessitatibus. Amet quas
+                            at quia, iure necessitatibus tempora dicta, quos voluptatibus, perspiciatis neque
+                            doloremque..
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./assets/img/website_covid19.jpg" class="py-3 card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Do you want to sell your property?</h5>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Harum delectus eius velit illo eligendi, ipsum neque necessitatibus. Amet quas
+                            at quia, iure necessitatibus tempora dicta, quos voluptatibus, perspiciatis neque
+                            doloremque..
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="./assets/img/website_covid19.jpg" class="py-3 card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Do you want to sell your property?</h5>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Harum delectus eius velit illo eligendi, ipsum neque necessitatibus. Amet quas
+                            at quia, iure necessitatibus tempora dicta, quos voluptatibus, perspiciatis neque
+                            doloremque..
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- latest news end -->
+
+
+    <!-- contact area start -->
+    <div class="container p-5 contact-bg my-5">
+        <div class="row">
+            <div class="col-md-8">
+                <p class="">For more information or a non-binding valuation of your property:
+                </p>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-primary float-end">Contact US</button>
+            </div>
+        </div>
+    </div>
+    <!-- contact area end -->
+
+    <!-- footer area start -->
+
+    <div class="container-fluid bg-dark py-5 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="./assets/img/logo.JPG" alt="">
+                    <p class="pt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Autem delectus nostrum aut dolor eaque ipsum voluptatum
+                        reprehenderit, animi atque eos!</p>
+                </div>
+                <div class="col-md-3">
+                    <p>CONTACT</p> <br>
+                    <p>info@hrms.com</p>
+                    <p>+8801794556952</p>
+                    <p>Uttara Sector-4</p>
+                </div>
+                <div class="col-md-3">
+                    <p>Social Media</p> <br>
+                    <p style="float:left; font-size:2.5rem; margin-right: 30px; margin-bottom: 50px;"><a href=""><i
+                                class="bi bi-facebook"></i></a></p>
+                    <p style="float:left; font-size:2.5rem; margin-right: 30px; margin-bottom: 50px;"><a href=""><i
+                                class="bi bi-instagram"></i></a></p>
+                </div>
+                <div class="col-md-3">
+                    <p>NEWSLETTER</p> <br>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet sit reprehenderit, deleniti
+                        exercitationem provident eos?</p>
+                    <p>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    </p>
+                    <p>You can visit our terms and condition here.</p>
+                </div>
+                <div class="col-md-12">
+                    <p>All right researved @ HRMS, 2022</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer area end -->
+
+    <!-- scroll top  -->
+
+    <a href="#" id="toTopBtn" class="cd-top text-replace js-cd-top cd-top--is-visible cd-top--fade-out"
+        data-abc="true"></a>
+
+    <!-- scroll top  -->
+
+
+    <script src="./assets/js/bootstrap.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/js/custom.js"></script>
+</body>
+
+</html>
