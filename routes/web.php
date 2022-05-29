@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::group(['middleware' => ['auth']], function () {
     })->name('dashboard');
 
     Route::prefix('admin')->group(function () {
-
+        //Profile
         Route::get('/profile-overview', function () {
             return view('backend.admin.profile.profile-overview');
         })->name('admin.profile-overview');
@@ -33,7 +34,12 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/profile-settings', function () {
             return view('backend.admin.profile.profile-settings');
         })->name('admin.profile.settings');
+        //Role
         Route::get('/roles', [RoleController::class,'index'])->name('role.index');
+
+        //User
+        Route::get('/all-users', [UserController::class,'index'])->name('user.index');
+        Route::get('/show/{id}', [UserController::class,'show'])->name('user.show');
         
      });
     

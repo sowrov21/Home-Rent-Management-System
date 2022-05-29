@@ -142,7 +142,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Active User</span>
+                                <a href="{{route('user.index')}}"><span class="menu-title">All User</span></a>
                                 
                             </span>
           

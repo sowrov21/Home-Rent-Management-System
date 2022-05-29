@@ -12,7 +12,7 @@
 		<!--end::Fonts-->
 		<!--begin::Page Vendor Stylesheets(used by this page)-->
 		<link href="{{asset('backend/dist')}}/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="{{asset('backend/dist')}}/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+		{{-- <link href="{{asset('backend/dist')}}/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" /> --}}
 		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="{{asset('backend/dist')}}/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
@@ -24,6 +24,7 @@
 		<link href="{{asset('backend/dist')}}assets/css/style.dark.bundle.css" rel="stylesheet" type="text/css" />
 
 		  <link href="{{asset('css/toster.css')}}" rel="stylesheet" type="text/css" />
+		  @stack('csses')
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -3027,7 +3028,7 @@
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Vendors Javascript(used by this page)-->
 		<script src="{{asset('backend/dist')}}/assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
-		<script src="{{asset('backend/dplugins/global/plugins.bundle.css')}}/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		{{-- <script src="{{asset('backend/dplugins/global/plugins.bundle.css')}}/assets/plugins/custom/datatables/datatables.bundle.js"></script> --}}
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
 		<script src="{{asset('backend/dist')}}/assets/js/widgets.bundle.js"></script>
@@ -3038,6 +3039,9 @@
 		<script src="{{asset('backend/dist')}}/assets/js/custom/utilities/modals/users-search.js"></script>
 
 		<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+		
+
+		@stack('scripts')
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
