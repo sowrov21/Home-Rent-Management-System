@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Auth\SocialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,10 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/delete/{id}', [UserController::class, 'destroy'])->name('user.delete');
         
      });
-    
+
 });
+
+Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
+Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
+
 require __DIR__.'/auth.php';
