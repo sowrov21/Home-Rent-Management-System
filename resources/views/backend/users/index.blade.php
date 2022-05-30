@@ -171,7 +171,10 @@
 															<!--end::Menu item-->
                                                             <!--begin::Menu item-->
 															<div class="menu-item px-3">
-																<a href="#" class="menu-link px-3">Delete</a>
+																                
+                               <a href="{{route('user.delete',$user->id)}}" class="menu-link px-3" onclick="return confirm('Are you sure you want to delete this?')" >Delete</a>
+   
+																
 															</div>
 															<!--end::Menu item-->
 										

@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
         //User
         Route::get('/all-users', [UserController::class,'index'])->name('user.index');
         Route::get('/show/{id}', [UserController::class,'show'])->name('user.show');
+        Route::get('/delete/{id}', [UserController::class, 'destroy'])->name('user.delete');
         
      });
     

@@ -90,7 +90,7 @@
 												<div class="pb-5 fs-6">
 													<!--begin::Details item-->
 													<div class="fw-bolder mt-5">Account ID</div>
-													<div class="text-gray-600">ID-45453423</div>
+													<div class="text-gray-600">ID-{{$user->id}}</div>
 													<!--begin::Details item-->
 													<!--begin::Details item-->
 													<div class="fw-bolder mt-5">Billing Email</div>
