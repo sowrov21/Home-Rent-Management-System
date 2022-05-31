@@ -35,7 +35,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
            $msg='Login Success';
-            Toastr::success($msg, 'Authorization successfull.!',["progressBar"=> true,"positionClass"=>"toast-top-right"]);
+            Toastr::success($msg, 'Authentication successful.!',["progressBar"=> true,"positionClass"=>"toast-top-right"]);
         return redirect()->intended(RouteServiceProvider::HOME)->with('msg',$msg);
     }
 

@@ -78,7 +78,7 @@
 												<!--end::Svg Icon-->Export</button>
 												<!--end::Export-->
 												<!--begin::Add customer-->
-												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Add Customer</button>
+												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer">Add User</button>
 												<!--end::Add customer-->
 											</div>
 											<!--end::Toolbar-->
@@ -209,7 +209,7 @@
 												<!--begin::Modal header-->
 												<div class="modal-header" id="kt_modal_add_customer_header">
 													<!--begin::Modal title-->
-													<h2 class="fw-bolder">Add a Customer</h2>
+													<h2 class="fw-bolder">Add a User</h2>
 													<!--end::Modal title-->
 													<!--begin::Close-->
 													<div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
