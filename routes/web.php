@@ -50,4 +50,10 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
 Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
 
+//Roles
+Route::get('all-roles',[RoleController::class,'allUser'])->name('Role.allUser');
+Route::get('create-role',[RoleController::class,'createRole'])->name('Role.createRole');
+Route::post('store-role',[RoleController::class,'storeRole'])->name('Role.storeRole');
+Route::get('delete-role/{id}',[RoleController::class,'destroyRole'])->name('Role.destroyRole');
+
 require __DIR__.'/auth.php';
