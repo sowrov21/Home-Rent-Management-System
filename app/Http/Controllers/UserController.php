@@ -23,7 +23,7 @@ class UserController extends Controller
         //dd($user);
         $user->delete();
         $msg='Delete Success';
-        Toastr::success($msg, 'Delete successfull.!',["progressBar"=> true,"positionClass"=>"toast-top-right"]);
+        Toastr::success($msg, 'Delete successful.!',["progressBar"=> true,"positionClass"=>"toast-top-right"]);
         return redirect()->back()->with('msg',$msg);;
 
     }
