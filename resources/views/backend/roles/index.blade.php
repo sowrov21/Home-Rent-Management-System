@@ -2,6 +2,7 @@
 
 <button><a href="{{route('Role.createRole')}}"> Add new role</a></button><br><br>
 
+
 <table >
 
     <thead>
@@ -15,12 +16,12 @@
 
         @foreach ($arrayData as $role)
         <tr>
-          
+
             <td>{{$role->id}}</td>
             <td>{{$role->name}}</td>
             <td>
-                <a href="#">Edit</a>|
-                <a href="#">Details</a>|
+                <a href="{{ route('Role.editRole',$role->id) }}">Edit</a>|
+                <a href="{{ route('Role.detailsRole',$role->id) }}">Details</a>|
                 <a href="{{route('Role.destroyRole',$role->id)}}">Delete</a>
             </td>
         </tr>

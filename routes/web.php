@@ -31,7 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/profile-overview', function () {
             return view('backend.admin.profile.profile-overview');
         })->name('admin.profile-overview');
-        
+
         Route::get('/profile-settings', function () {
             return view('backend.admin.profile.profile-settings');
         })->name('admin.profile.settings');
@@ -42,7 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/all-users', [UserController::class,'index'])->name('user.index');
         Route::get('/show/{id}', [UserController::class,'show'])->name('user.show');
         Route::get('/delete/{id}', [UserController::class, 'destroy'])->name('user.delete');
-        
+
      });
 
 });
@@ -55,5 +55,8 @@ Route::get('all-roles',[RoleController::class,'allUser'])->name('Role.allUser');
 Route::get('create-role',[RoleController::class,'createRole'])->name('Role.createRole');
 Route::post('store-role',[RoleController::class,'storeRole'])->name('Role.storeRole');
 Route::get('delete-role/{id}',[RoleController::class,'destroyRole'])->name('Role.destroyRole');
+Route::get('edit-role/{id}', [RoleController::class, 'editRole'])->name('Role.editRole');
+Route::post('update-role/{id}', [RoleController::class, 'updateRole'])->name('Role.updateRole');
+Route::get('details-role/{id}', [RoleController::class, 'detailsRole'])->name('Role.detailsRole');
 
 require __DIR__.'/auth.php';
