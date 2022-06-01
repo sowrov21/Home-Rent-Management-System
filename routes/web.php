@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\SocialController;
@@ -55,5 +56,20 @@ Route::get('all-roles',[RoleController::class,'allUser'])->name('Role.allUser');
 Route::get('create-role',[RoleController::class,'createRole'])->name('Role.createRole');
 Route::post('store-role',[RoleController::class,'storeRole'])->name('Role.storeRole');
 Route::get('delete-role/{id}',[RoleController::class,'destroyRole'])->name('Role.destroyRole');
+
+
+//tags
+Route::prefix('tags')->group(function (){
+
+Route::get('/',[TagController::class,'index'])->name('tag.index');
+Route::get('create',[TagController::class,'create'])->name('tag.create');
+Route::post('store',[TagController::class,'store'])->name('tag.store');
+Route::get('edit/{id}',[TagController::class,'edit'])->name('tag.edit');
+Route::post('update/{id}',[TagController::class,'update'])->name('tag.update');
+Route::get('show/{id}',[TagController::class,'show'])->name('tag.show');
+Route::delete('delete/{id}',[TagController::class,'destroy'])->name('tag.destroy');
+
+
+});
 
 require __DIR__.'/auth.php';
