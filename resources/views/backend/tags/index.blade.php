@@ -1,6 +1,6 @@
 <h1>All Tags</h1>
 
-<button><a href="{{route('tag.create')}}"> Add new role</a></button><br><br>
+<button><a href="{{route('tag.create')}}"> Add new tag</a></button><br><br>
 
 <table >
 

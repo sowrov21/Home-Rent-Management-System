@@ -109,7 +109,7 @@ Route::prefix('locations')->group(function (){
 //apartment_image
 Route::prefix('apartment-image')->group(function (){
 
-    Route::get('/',[ApartmentImageController::class,'index'])->name('apartment_image.index');
+    Route::get('/{id}',[ApartmentImageController::class,'index'])->name('apartment_image.index');
     Route::get('create',[ApartmentImageController::class,'create'])->name('apartment_image.create');
     Route::post('store',[ApartmentImageController::class,'store'])->name('apartment_image.store');
     Route::get('edit/{id}',[ApartmentImageController::class,'edit'])->name('apartment_image.edit');

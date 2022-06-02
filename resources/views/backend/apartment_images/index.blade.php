@@ -1,27 +1,37 @@
-<h1>All Locations</h1>
+<h1>All Images of Apartment</h1>
 
-<button><a href="{{route('location.create')}}"> Add new role</a></button><br><br>
 
 <table >
 
     <thead>
         <tr>
             <td>SL</td>
-            <td>Name</td>
+            <td>Images</td>
             <td>Action</td>
         </tr>
     </thead>
     <tbody>
 
-        @foreach ($locations as $key=>$location)
+        @foreach ($images as $key=>$image)
         <tr>
           
             <td>{{++$key}}</td>
-            <td>{{$location->name}}</td>
             <td>
-                <button><a href="{{route('location.edit',$location->id)}}">Edit</a></button>|
-                <button><a href="{{route('location.show',$location->id)}}">Details</a></button>|
-            <form action="{{ route('location.destroy',   $location->id) }}" method="post" >
+            
+            @if(file_exists(storage_path().'/app/public/apartments/'.$image->name ) && (!is_null($image->name)))
+
+            <img src="{{ asset('storage/apartments/'.$image->name) }}" height="100" width="100">
+
+            @else
+            {{'image nai'}}
+            {{-- <img src="{{ asset('img/default.png') }}" /> --}}
+            @endif
+
+            </td>
+            <td>
+                <button><a href="{{route('apartment_image.edit',$image->id)}}">Edit</a></button>|
+       
+            <form action="{{ route('apartment_image.destroy',$image->id) }}" method="post" >
                      @csrf
                       @method('DELETE')
                      <button type="submit"  onclick="return confirm('Are You Sure Want To Delete?')">Delete</button>

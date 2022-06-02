@@ -13,7 +13,7 @@
 </div>
 
 
-<form action="{{route('apartment.update',$apartment->id)}}" method="POST">
+<form action="{{route('apartment.update',$apartment->id)}}" method="POST" enctype="multipart/form-data">
 
     <h3>Add new appartment</h3>
     @csrf
@@ -64,6 +64,30 @@
 
              @endforeach
   </div>
+
+
+    <div >
+         <label >Add more image</label>
+      <input type="file" name="image[]" multiple accept="image/*">
+    </div>
+
+     <div>
+        <p>Existing Images</p>
+        @foreach ($images as $image)
+        {{-- @dd($image->name) --}}
+                    @if(file_exists(storage_path().'/app/public/apartments/'.$image->name ) && (!is_null($image->name)))
+
+                    <img src="{{ asset('storage/apartments/'.$image->name) }}" height="100" width="100">
+
+                    @else
+                    {{'image nai'}}
+                    {{-- <img src="{{ asset('img/default.png') }}" /> --}}
+                    @endif
+        @endforeach
+
+      </div>
+       
+     <button><a href="{{route('apartment_image.index',$apartment->id)}}">Manage Images</a></button> 
 
 
     <button type="submit">Submit</button>

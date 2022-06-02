@@ -8,7 +8,7 @@ use App\Models\Location;
 use App\Models\Apartment;
 use Illuminate\Http\Request;
 use App\Models\ApartmentImage;
-use Intervention\Image\Facades\Image;
+use Intervention\Image\Facades\Image as Image;
 use Illuminate\Database\QueryException;
 
 class ApartmentController extends Controller
@@ -47,27 +47,18 @@ class ApartmentController extends Controller
         $apartment->tags()->attach($tags);
 
         $images = $req->image;
-        //$images[] = $this->uploadImage($req->image, $req->title);
         //dd($images);
-        $imageFiles=array();
-        foreach ($images as $key => $image) {
-         
-         array_push($imageFiles,$this->uploadImage($image, $req->title));
-        
-        }
-       
-        //dd($apartment->id);
-        
-        foreach($imageFiles as $imageFile){
-            
-          $data[] =[
-              'apartment_id'=>$apartment->id,
-              'name' => $imageFile,
+        foreach ($images as $image) {
+          //dd($image);
+          $file_name = $this->uploadImage($image, $req->title);
+
+          $data[] = [
+            'apartment_id' => $apartment->id,
+            'name' => $file_name,
           ];
-      };
-      ApartmentImage::insert($data);
-       // dd($imageFile);
-          
+         
+        }
+        ApartmentImage::insert($data);
         return redirect()->route('apartment.index');
         }
        }
@@ -82,8 +73,9 @@ class ApartmentController extends Controller
       $apartment = Apartment::find($id);
       $locations = Location::all();
       $tags = Tag::all();
+      $images = ApartmentImage::where('apartment_id', $id)->get();
       $selectedTags = $apartment->tags->pluck('id')->toArray();
-        return view('backend.apartments.edit',compact('apartment','locations','tags','selectedTags'));
+        return view('backend.apartments.edit',compact('apartment','locations','tags','selectedTags', 'images'));
     }
     function update(Request $req,$id)
     {
@@ -109,6 +101,18 @@ class ApartmentController extends Controller
 
          $apartment->tags()->sync($tags);
 
+        $images = $req->image;
+        //dd($images);
+        foreach ($images as $image) {
+          //dd($image);
+          $file_name = $this->uploadImage($image, $req->title);
+
+          $data[] = [
+            'apartment_id' => $apartment->id,
+            'name' => $file_name,
+          ];
+        }
+        ApartmentImage::insert($data);
         return redirect()->route('apartment.index');
         }
        }
