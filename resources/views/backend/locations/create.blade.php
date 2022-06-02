@@ -1,12 +1,12 @@
 
 
-<form action="{{route('tag.store')}}" method="POST">
+<form action="{{route('location.store')}}" method="POST">
 
-    <h3>Add new Tag</h3>
+    <h3>Add new Location</h3>
     @csrf
     
     <div>
-        <label for="name">Tag Name:</label>
+        <label for="name">Location Name:</label>
           <input id="name" type="text" name="name" value="{{old('name')}}">
     </div>
     <div>
@@ -18,6 +18,6 @@
 
 
     <button type="submit">Submit</button>
-    <button ><a href="{{route('tag.index')}}">Back</a> </button>
+    <button type="button"><a href="{{route('location.index')}}">Back</a> </button>
 
 </form>

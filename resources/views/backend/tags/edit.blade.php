@@ -19,4 +19,6 @@
 
     <button type="submit">Submit</button>
 
+    <button ><a href="{{route('tag.index')}}">Back</a> </button>
+
 </form>

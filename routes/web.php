@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ApartmentController;
 use App\Http\Controllers\Auth\SocialController;
+use App\Http\Controllers\ApartmentImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,5 +77,46 @@ Route::delete('delete/{id}',[TagController::class,'destroy'])->name('tag.destroy
 
 
 });
+
+//apartments
+Route::prefix('apartments')->group(function (){
+
+Route::get('/',[ApartmentController::class,'index'])->name('apartment.index');
+Route::get('create',[ApartmentController::class,'create'])->name('apartment.create');
+Route::post('store',[ApartmentController::class,'store'])->name('apartment.store');
+Route::get('edit/{id}',[ApartmentController::class,'edit'])->name('apartment.edit');
+Route::post('update/{id}',[ApartmentController::class,'update'])->name('apartment.update');
+Route::get('show/{id}',[ApartmentController::class,'show'])->name('apartment.show');
+Route::delete('delete/{id}',[ApartmentController::class,'destroy'])->name('apartment.destroy');
+
+
+});
+
+//location
+Route::prefix('locations')->group(function (){
+
+    Route::get('/',[LocationController::class,'index'])->name('location.index');
+    Route::get('create',[LocationController::class,'create'])->name('location.create');
+    Route::post('store',[LocationController::class,'store'])->name('location.store');
+    Route::get('edit/{id}',[LocationController::class,'edit'])->name('location.edit');
+    Route::post('update/{id}',[LocationController::class,'update'])->name('location.update');
+    Route::get('show/{id}',[LocationController::class,'show'])->name('location.show');
+    Route::delete('delete/{id}',[LocationController::class,'destroy'])->name('location.destroy');
+    
+});  
+
+
+//apartment_image
+Route::prefix('apartment-image')->group(function (){
+
+    Route::get('/',[ApartmentImageController::class,'index'])->name('apartment_image.index');
+    Route::get('create',[ApartmentImageController::class,'create'])->name('apartment_image.create');
+    Route::post('store',[ApartmentImageController::class,'store'])->name('apartment_image.store');
+    Route::get('edit/{id}',[ApartmentImageController::class,'edit'])->name('apartment_image.edit');
+    Route::post('update/{id}',[ApartmentImageController::class,'update'])->name('apartment_image.update');
+    Route::get('show/{id}',[ApartmentImageController::class,'show'])->name('apartment_image.show');
+    Route::delete('delete/{id}',[ApartmentImageController::class,'destroy'])->name('apartment_image.destroy');
+    
+}); 
 
 require __DIR__.'/auth.php';

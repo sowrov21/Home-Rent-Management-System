@@ -29,7 +29,7 @@
 
     </tbody>
 </table>
-
+<br><br><button ><a href="{{url('/')}}">Home</a> </button>
 <style>
     table, th, td {
   border: 1px ;

@@ -16,7 +16,7 @@
         @foreach ($tags as $key=>$tag)
         <tr>
           
-            <td>{{$key++}}</td>
+            <td>{{++$key}}</td>
             <td>{{$tag->name}}</td>
             <td>
                 <button><a href="{{route('tag.edit',$tag->id)}}">Edit</a></button>|
@@ -33,6 +33,8 @@
 
     </tbody>
 </table>
+
+<br><br><button ><a href="{{url('/')}}">Home</a> </button>
 
 <style>
     table, th, td {
