@@ -1,6 +1,6 @@
 <h1>All Locations</h1>
 
-<button><a href="{{route('location.create')}}"> Add new role</a></button><br><br>
+<button><a href="{{route('location.create')}}"> Add new location</a></button><br><br>
 
 <table >
 

@@ -1,3 +1,5 @@
+{{-- @dd($images) --}}
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -18,6 +20,40 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+            }
+
+
+
+            .card-product .img-wrap {
+                border-radius: 3px 3px 0 0;
+                overflow: hidden;
+                position:absolute;
+                height: 220px;
+                text-align: center;
+            }
+            .card-product .img-wrap img {
+                max-height: 100%;
+                max-width: 100%;
+                object-fit: cover;
+            }
+            .card-product .info-wrap {
+                overflow: hidden;
+                padding: 15px;
+                border-top: 1px solid #eee;
+            }
+            .card-product .bottom-wrap {
+                padding: 15px;
+                border-top: 1px solid #eee;
+            }
+
+            .label-rating { margin-right:10px;
+                color: #333;
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            .card-product .price-old {
+                color: #999;
             }
         </style>
     </head>
@@ -40,22 +76,84 @@
                 </div>
             @endif
 
-            <div class="">
+            <div class="row">
 
-                <h2>Testing Backend Operation</h2>
-                <a class="btn btn-sm btn-success" href="{{route('tag.index')}}" >All Tgs</a>
-                <a class="btn btn-sm btn-success" href="{{route('tag.create')}}">Add Tag</a>
-                <a class="btn btn-sm btn-danger" href="{{route('Role.allUser')}}" >All Roles</a>
-                <a class="btn btn-sm btn-danger" href="{{route('Role.createRole')}}">Add Role</a>
-                <a class="btn btn-sm btn-warning" href="{{route('apartment.index')}}">All Apartment</a>
-                <a class="btn btn-sm btn-warning" href="{{route('apartment.create')}}">Add Apartment</a>
-                <a class="btn btn-sm btn-info" href="{{route('location.index')}}">All Location</a>
-                <a class="btn btn-sm btn-info" href="{{route('location.create')}}">Add Location</a>
+                <div class="col-12">
 
+                    <h2>Testing Backend Operation</h2>
+                    <a class="btn btn-sm btn-success" href="{{route('tag.index')}}" >All Tgs</a>
+                    <a class="btn btn-sm btn-success" href="{{route('tag.create')}}">Add Tag</a>
+                    <a class="btn btn-sm btn-danger" href="{{route('Role.allUser')}}" >All Roles</a>
+                    <a class="btn btn-sm btn-danger" href="{{route('Role.createRole')}}">Add Role</a>
+                    <a class="btn btn-sm btn-warning" href="{{route('apartment.index')}}">All Apartment</a>
+                    <a class="btn btn-sm btn-warning" href="{{route('apartment.create')}}">Add Apartment</a>
+                    <a class="btn btn-sm btn-info" href="{{route('location.index')}}">All Location</a>
+                    <a class="btn btn-sm btn-info" href="{{route('location.create')}}">Add Location</a>
+    
+    
+    
+    
+                </div>
+                <div class="mt-4 col-12">
 
+                    <button><a href="{{route('rent.cart')}}">Cart</a></button>
 
+                    <h2 class="text-center">All Apartments</h2>
+                    <div class="conatainer">
+
+                        <div class="row">
+                            @foreach ($apartments as $apartment)
+                            <div class="col-4">
+                                <figure class="card card-product">
+                                    <div class="img-wrap">
+                                      
+                                        @foreach ($images as $image)
+                                                {{-- @dd($image->apartment_id) --}}
+                                        @if ($image->apartment_id ==  $apartment->id)
+                                        @if(file_exists(storage_path().'/app/public/apartments/'.$image->name ) && (!is_null($image->name)))
+
+                                        <img src="{{ asset('storage/apartments/'.$image->name) }}" height="50" width="50">
+
+                                        @else
+                                        {{'image nai'}}
+                                        {{-- <img src="{{ asset('img/default.png') }}" /> --}}
+                                        @endif
+                                            
+                                        @endif
+                                                
+
+                                        @endforeach
+
+                                    </div>
+                                    <figcaption class="info-wrap">
+                                            <h4 class="title">{{$apartment->title}}</h4>
+                                            <p class="desc">Some small description goes here</p>
+                                            <div class="price-wrap h5">
+                                                <span class="price-new">$1280</span> <del class="price-old">$1980</del>
+                                            </div>
+                                            {{-- <div class="rating-wrap">
+                                                <div class="label-rating">132 reviews</div>
+                                                <div class="label-rating">154 orders </div>
+                                            </div> <!-- rating-wrap.// --> --}}
+                                    </figcaption>
+                                    <div class="bottom-wrap">
+                                        <a href="" class="btn btn-sm btn-primary float-right">Rent Now</a>	
+                       <!-- price-wrap.// -->
+                                    </div> <!-- bottom-wrap.// -->
+                                </figure>
+                            
+                            </div>
+                            @endforeach
+             
+                        </div>
+
+                    </div>
+               
+                </div>
 
             </div>
+
+           
         </div>
 
        

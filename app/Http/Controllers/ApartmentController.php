@@ -32,14 +32,35 @@ class ApartmentController extends Controller
         $validated = $req->validate([
         'title' => 'required|unique:apartments|max:255',
         ]);
-       // dd($req->all());
+        //dd($req->all());
 
         if($validated){
 
+          if($req->hasFile('main_image')) {
+           
+            $mainImage = $this->uploadImage($req->main_image, $req->title);
+ 
+         }
+
           $apartment = Apartment::create([
             'title' => $req->title ?? null,
+            'main_image'=>$mainImage,
             'owner_id' => $req->owner_id ?? null,
             'location_id' => $req->location_id ?? null,
+            'apartment_size' => $req->apartment_size ?? null,
+            'total_bed' => $req->total_bed ?? null,
+            'total_balcony' => $req->total_balcony ?? null,
+            'total_parking' => $req->total_parking ?? null,
+            'parking_size' => $req->parking_size ?? null,
+            'floor_number' => $req->floor_number ?? null,
+            'unit_number' => $req->unit_number ?? null,
+            'unit_per_floor' => $req->unit_per_floor ?? null,
+            'price' => $req->price ?? null,
+            'total_lift' => $req->total_lift ?? null,
+            'year_build' => $req->year_build ?? null,
+            'apartment_type_id' => $req->apartment_type_id ?? null,
+            'apartment_facing' => $req->apartment_facing ?? null,
+
         ]);
 
         $tags = $req->tag_id;
@@ -64,7 +85,7 @@ class ApartmentController extends Controller
        }
        catch(QueryException $e)
        {
-         return redirect()->back()->with('error', $e->getMessage());
+         return redirect()->back()->withErrors($e->getMessage());
        }
         
     }

@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ApartmentController;
 use App\Http\Controllers\Auth\SocialController;
 use App\Http\Controllers\ApartmentImageController;
+use App\Http\Controllers\RentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,24 @@ use App\Http\Controllers\ApartmentImageController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+ Route::get('/', [FrontendController::class,'index']);
+ Route::get('/all-apartment', [FrontendController::class,'allApartmets']);
+
+// Route::get('/', [RentController::class,'index']);
+
+Route::prefix('rent')->group(function (){
+
+   
+    Route::get('cart',[RentController::class,'cart'])->name('rent.cart');
+    Route::post('store',[RentController::class,'store'])->name('rent.store');
+    Route::get('addToCart/{apartment}',[RentController::class,'addToCart'])->name('rent.addToCart');
+    Route::post('update/{id}',[RentController::class,'update'])->name('rent.update');
+    Route::get('show/{id}',[RentController::class,'show'])->name('rent.show');
+    Route::delete('delete/{id}',[RentController::class,'destroy'])->name('rent.destroy');
+    
+    
+    });
+
 
 Route::group(['middleware' => ['auth']], function () {
 
