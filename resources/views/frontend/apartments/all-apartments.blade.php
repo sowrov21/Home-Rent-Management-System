@@ -313,7 +313,7 @@
 									<!-- btn-item --><a href="../author/admin/index.html" class="btn btn-secondary btn-sm">
                     Send Email
                 </a>
-									<a href="#" class="btn btn-primary btn-sm"> <span class="">Rent</span> </a>
+									<a href="{{route('rent.addToCart',$apartment)}}" class="btn btn-primary btn-sm"> <span class="">Rent</span> </a>
 								</div>
 								<!-- item-body -->
 								<div class="item-footer clearfix"></div>

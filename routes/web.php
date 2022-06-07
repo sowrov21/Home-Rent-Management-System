@@ -35,7 +35,8 @@ Route::prefix('rent')->group(function (){
     Route::get('addToCart/{apartment}',[RentController::class,'addToCart'])->name('rent.addToCart');
     Route::post('update/{id}',[RentController::class,'update'])->name('rent.update');
     Route::get('show/{id}',[RentController::class,'show'])->name('rent.show');
-    Route::delete('delete/{id}',[RentController::class,'destroy'])->name('rent.destroy');
+    Route::get('delete/{id}',[RentController::class,'destroy'])->name('rent.destroy');
+    Route::get('checkout',[RentController::class,'checkout'])->name('rent.checkout');
     
     
     });

@@ -1,10 +1,12 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+
+{{-- @dd(session('cart')) --}}
 <section class="content-wrap">
 <div class="container">
 
-    <h3 class="text-center" >Cart Page</h3>
+    <h3 class="text-center" >Choosed Apartment</h3>
     <div class="row">
         <table class="table table-hover">
             <thead>
@@ -16,24 +18,34 @@
                     <td width="10%">Action</td>
                 </tr>
             </thead>
+            @php $total =0; $sl =0;@endphp
             <tbody>
-        
-                <tr>
-                    <td>1</td>
-                    <td>MR. HH</td>
-                    <td>BDT 20000</td>
-                    <td>Dhaka</td>
-                    <td>
-                        <button class="btn btn-sm btn-danger"> <a href="#">Delete</a> </button>
-                    </td>
-                </tr>
-        
+                @if (session('cart'))
+
+                  @foreach (session('cart') as $id =>$apartment)
+                   @php
+                       $total +=$apartment['price'];
+                   @endphp
+                  <tr>
+                      <td>{{++$sl}}</td>
+                      <td>{{$apartment['owner_name']}}</td>
+                      <td>৳{{$apartment['price']}}</td>
+                      <td>{{$apartment['location_name']}}</td>
+                      <td>
+                          <button class="btn btn-outline-danger"> <a href="{{ route('rent.destroy',[$id]) }}">Delete</a> </button>
+                      </td>
+                  </tr>
+                  @endforeach
+                    
+                @endif
+
             </tbody>
             <tfoot>
                 <tr>
-                    <td><a class="btn btn-info" href="{{url('/')}}">Continue browsing</a></td>
+                    <td><a class="btn btn-info" href="{{url('/all-apartment')}}">Continue browsing</a></td>
+                    <td><a class="btn btn-success" href="{{route('rent.checkout')}}">Checkout</a></td>
                     <td colspan="2"></td>
-                    <td><strong>Total</strong></td>
+                    <td><strong>Total: ৳{{$total}}</strong></td>
                 </tr>
             </tfoot>
         </table>

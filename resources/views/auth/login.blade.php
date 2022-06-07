@@ -45,7 +45,7 @@ License: For each use you must have a valid license purchased only from above li
 				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 					<!--begin::Logo-->
 					<a href="../../demo1/dist/index.html" class="mb-12">
-						<img alt="Logo" src="{{asset('backend/dist')}}/assets/media/logos/logo-1.svg" class="h-40px" />
+						<img  src="" class="h-40px" alt="{{"Home Rent Logo"}}" />
 					</a>
 					<!--end::Logo-->
 					<!--begin::Wrapper-->
@@ -57,13 +57,19 @@ License: For each use you must have a valid license purchased only from above li
 
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
+					  
+						@if(session()->has('checkout_failed'))
+							<div class="alert alert-danger text-center">
+								{{ session()->get('checkout_failed') }}
+							</div>
+						@endif
 						<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="{{route('login') }}" method="POST" action="{{ route('login') }}">
 
                              @csrf
 							<!--begin::Heading-->
 							<div class="text-center mb-10">
 								<!--begin::Title-->
-								<h1 class="text-dark mb-3">Sign In to Metronic</h1>
+								<h1 class="text-dark mb-3">Sign In to Home Rent </h1>
 								<!--end::Title-->
 								<!--begin::Link-->
 								<div class="text-gray-400 fw-bold fs-4">New Here?

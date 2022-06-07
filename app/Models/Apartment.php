@@ -25,4 +25,7 @@ class Apartment extends Model
     public function apartment_images(){
         return $this->hasMany(ApartmentImage::class)->withTimestamps();
     }
+    public function user(){
+        return $this->belongsTo(User::class,'owner_id','id');//Convension nt maintained. So, must specify local + foreign key
+    }
 }
